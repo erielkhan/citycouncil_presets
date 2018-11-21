@@ -1,0 +1,40 @@
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0" author="erielkhan"
+shortdescription="CityCouncil_Green_Preset"
+es.shortdescription="Ayuntamientos_Verde"
+ca.shortdescription="Ajuntaments_Verd"
+description="Tag easily urban green"
+version="1.2018-11-21"
+link="https://wiki.openstreetmap.org/" 
+icon="https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_.png"
+baselanguage="ca">
+
+<!-- Based on Quick-highways from lzhl, for parking options Parking Lanes from Sebastian Klemm, Kay Drangmeister. Accesibility options from CCcamara. Icons from OSM Wiki , Wikimedia commons and JOSM. Partial french translation by Xapitoun. Spanish and Catalan translation by yopaseopor .We wish translations and localizations.Can you help us? -->
+
+<group name="Traffic_signs_ES" icon="traffic_signs_presets/ES_road_beacon_big.png">
+	<group name="A.Ways" es.name="A.Vías" ca.name="A.Vies" icon="traffic_signs_presets/ES_ruta_europea.png">		   
+		<group name="Highways" es.name="1.Carreteras" ca.name="1.Carreteres" icon="traffic_signs_presets/secondary.png">
+
+			<item name="Motorway" es.name="Autopista/Autovía" ca.name="Autopista/Autovia" fr.name="Autoroute" icon="traffic_signs_presets/ES_motorway.png" type="node,relation,way,closedway">
+			<label text="Common propierties" ca.text="Propietats comuns" es.text="Propiedades comunes" icon="https://upload.wikimedia.org/wikipedia/commons/3/3f/Motorway_photo_300px.jpg"/>
+			<combo key="highway" text="Main lane or link" es.text="Carril principal o enlace" ca.text="Carril principal o enllaç" default="motorway"> 
+			<list_entry value="motorway" display_value="Main" short_description="Main road" icon="http://wiki.openstreetmap.org/w/images/thumb/d/d0/Cesta_od_Le%C5%A1tiny_do_Lipnice_nad_S%C3%A1zavou_%282%29.jpg/80px-Cesta_od_Le%C5%A1tiny_do_Lipnice_nad_S%C3%A1zavou_%282%29.jpg" ca.display_value="Principal" ca.short_description="Calçada principal de l'autopista" es.display_value="Principal" es.short_description="Calzada principal de la autopista" />
+			<list_entry value="motorway_link" display_value="Link" short_description="Link" icon="https://upload.wikimedia.org/wikipedia/commons/3/3f/Motorway_photo_300px.jpg" ca.display_value="Enllaç" ca.short_description="Enllaç cap a o des de l'autopista" es.display_value="Enlace" es.short_description="Enlace hacia o desde la autopista" />
+			</combo>
+			<combo key="highway" text="Main lane or link" es.text="Carril principal o enlace" ca.text="Carril principal o enllaç" values="motorway,motorway_link" ca.display_values="Principal,Enllaç" en.display_values="Main,Link" es.display_values="Principal,Enlace" />
+			<text key="name" text="Name" es.text="Nombre" ca.text="Nom" />
+			<text key="ref" text="Motorway reference" es.text="Referencia de la autopista" ca.text="Referència de l'autopista" />
+			<check key="oneway" text="Oneway" es.text="Sentido único" ca.text="Sentit únic" default="on" />
+			<combo key="lanes:forward" ca.text="Nº carrils" es.text="Nº carriles" text="Number of lanes" values="1,2,3,4,5,6" />
+			<text key="width" text="Width.Default is 4 x lane" es.text="Anchura.Por defecto 4 por carril" ca.text="Amplada.Per defecte 4 per carril" />
+			<combo key="turn:lanes:forward" text="Lane destinations for that direction." ca.text="Direccions dels carrils en el sentit de la via." es.text="Direcciones de los carriles en el sentido de la vía." values="left|left,through|through,through;left|through,through|through;right,right|right,none" />
+			<label text="Menu says the destination of two first lanes.If that structure changes check if you have to change values.Each lane are separated with |.e.g.: through|through" ca.text="El menú et dirà la direcció dels dos primers carrils .Si aquesta estructura varia comprova si l'has de modificar.Cada carril va separat de |.Exemple: through|through" es.text="El menú te pondrá la dirección de los dos primeros carriles.Si esa estructura varía comprueba si debes modificar los carriles.Cada carril va separado de |.Ejemplo: through|through"/>
+			<text key="destination:lanes:forward" text="Destination per lane" es.text="Destinación por carril" ca.text="Destinació per carril" />
+			<label text="You have to write the destination as you see on traffic signs on the way. Each lane has to be separated with |.e.g.: Barcelona|Tarragona" ca.text="Has d'escriure la destinació tal i com veus als senyals de trànsit de la via. Cada carril va separat de |.Exemple: Barcelona|Tarragona" es.text="Debes escribir la dirección tal y como la ves en las señales de tráfico de la vía. Cada carril va separado de |.Ejemplo: Barcelona|Tarragona"/>
+			<combo key="change:lanes:forward" text="Change line for that direction." ca.text="Línia discontínua en el sentit de la via."  es.text="Línea discontinua en el sentido de la vía." values="yes,no,none,not_right|no,no|not_left" ca.display_values="Sí,No,Cap,No a dreta|NO,NO|No a esquerra" en.display_values="yes,no,none,not_right|no,no|not_left" es.display_values="Sí,No,Ninguna,No a derecha|NO,NO|No a izquierda" default="" />
+			<label text="Each lane are separated with |.e.g.: not_right|no" ca.text="Cada carril va separat de |.Exemple: not_right|no" es.text="Cada carril va separado de |.Ejemplo: not_right|no"/>
+			<check key="overtaking" text="Overtaking allowed"  ca.text="Permès avançar"  es.text="Permitido adelantar" default="on" />
+			<text key="maxspeed" text="Maximum speed allowed"  ca.text="Velocitat màxima permesa"  es.text="Velocidad máxima permitida" />
+			<check key="bridge" text="Bridge" fr.text="Pont"  ca.text="Pont" es.text="Puente" default="off" value_off="" />
+			<check key="tunnel" text="Tunnel" fr.text="Tunnel"  ca.text="Túnel" es.text="Túnel" default="off" value_off="" />
+			<check key="lit"  text="Lit" ca.text="Il·luminació" es.text="Iluminación" default="off" value_off="" />
+			</item>
